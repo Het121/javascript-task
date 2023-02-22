@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Event</title>
+</head>
+<body>
+    <h2>HET :- HI BRO?</h2>
+    <h2 onclick="this.innerHTML='YASH :- HELLO BROTHER! HOW ARE YOU?'">Click on this text!</h2> <hr>
+
+    <h2>HET :- BAS JALSA &#128514; TU BATA TU KESA HAI?</h2>
+    <h2 onclick="changeText(this)">Click on this text!</h2>
+
+    <script>
+    function changeText(id) {
+    id.innerHTML = "YASH :-  THIK HU SUN TO ABHI TIME KYA HUA &#128514;!";
+    }
+    </script> <hr>
+
+    <h2>HET :- RUK JA DEKHNA PADEGA &#128514;</h2>
+    <p>ANS DEKHNE KE LIYE NICHE DIYE GAYE BUTTON PE CLICK KIJIYE</p>
+
+    <button onclick="displayDate()">The time is?</button>
+
+    <script>
+    function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+    }
+    </script>
+
+    <p id="demo"></p> <hr>
+
+    <h2>YASH :- BHAI DATE KYA HUI VESE AAJ &#128514;</h2>
+    <p>Click "Try it" to execute the displayDate & TIME () function.</p>
+
+    <button id="myBtn">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+    document.getElementById("myBtn").onclick = displayDate;
+
+    function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+    }
+    </script> <hr>
+
+    <p id="demo"></p>
+
+    <script>
+    function checkCookies() {
+    var text = "";
+    if (navigator.cookieEnabled == true) {
+        text = "Cookies are enabled.";
+    } else {
+        text = "Cookies are not enabled.";
+    }
+    document.getElementById("demo").innerHTML = text;
+    }
+    </script> 
+
+    <h2>HET :- SUN NA YASH YE FORM BHAR DE NA PLEASE</h2>
+    <H3>YASH :- YA WHY NOT SOURE. </H3>
+    Enter your name: <input type="text" id="fname"  placeholder="PLEASE ENTER YOUR NAME"   onchange="upperCase()">
+    <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+    <script>
+    function upperCase() {
+    const x = document.getElementById("fname");
+    x.value = x.value.toUpperCase();
+    }
+    </script> <hr>
+
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+    style="background-color:#5e38d9;width:120px;height:20px;padding:40px;">
+    Mouse KO ISKE UPER GUMAO</div>
+
+    <script>
+    function mOver(obj) {
+    obj.innerHTML = "Thank You"
+    }
+
+    function mOut(obj) {
+    obj.innerHTML = "Mouse KO ISKE UPER GUMAO"
+    }
+    </script> <hr>
+
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+    style="background-color:#38d976;width:90px;height:20px;padding:40px;">
+    Click Me</div>
+
+    <script>
+    function mDown(obj) {
+    obj.style.backgroundColor = "PINK";
+    obj.innerHTML = "TATA BY BY";
+    }
+
+    function mUp(obj) {
+    obj.style.backgroundColor="#D94A38";
+    obj.innerHTML=" ONCE again Thank You";
+    }
+    </script>
+
+
+
+
+
+
+</body>
+</html>
